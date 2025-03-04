@@ -65,7 +65,7 @@ const forgetPassword = async (payload: { email: string }) => {
 
   const token = jwt.sign(jwtPayload, "secret", { expiresIn: "1h" });
 
-  const resetLink = `http://localhost:5173/reset-password?email=${user.email}&token=${token}`;
+  const resetLink = ` https://boi-bajar-backend.vercel.app/?email=${user.email}&token=${token}`;
 
   await sendMail(user?.email, "Reset password link", resetLink);
 };
